@@ -49,7 +49,7 @@ func main() {
 	for i, v := range questions {
 		fmt.Printf("Question %d: %s = \n", i+1, v.ques)
 		var answer string
-		fmt.Scanln("%s\n", &answer)
+		fmt.Scanf("%s\n", &answer)
 		if answer == v.ans {
 			correct += 1
 		}
