@@ -43,7 +43,6 @@ func main() {
 		exit("Failed to parse the provided CSV file")
 	}
 	questions := parseContent(content)
-	fmt.Println(questions)
 
 	correct := 0
 	for i, v := range questions {
