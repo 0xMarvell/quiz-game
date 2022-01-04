@@ -1,3 +1,8 @@
 package main
 
-import "testing"
+// import "testing"
+
+// type testpair struct {
+// 	values [][]string
+// 	result []problem
+// }
