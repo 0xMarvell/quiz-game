@@ -39,7 +39,7 @@ func exit(exitMessage string) {
 func main() {
 
 	//Create all flags needed for the quiz game
-	csvFilename := flag.String("csv", "problems.csv", "a CSV file with text written in a 'Question, Answer' format")
+	csvFilename := flag.String("csv", "problems.csv", "CSV file with text written in a 'Question, Answer' format")
 	timeLimit := flag.Int("limit", 30, "Time allocated for the quiz (in seconds)")
 	shuffle := flag.Bool("shuffle", true, "Shuffles the order of the questions displayed from the quiz file")
 	flag.Parse()
