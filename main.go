@@ -50,11 +50,21 @@ func main() {
 
 	correct := 0
 	for i, v := range questions {
-		fmt.Printf("Question %d: %s = \n", i+1, v.ques)
-		var answer string
-		fmt.Scanf("%s\n", &answer)
-		if answer == v.ans {
-			correct += 1
+		fmt.Printf("Question %d: %s = ", i+1, v.ques)
+		answerChan := make(chan string)
+		go func() {
+			var answer string
+			fmt.Scanf("%s\n", &answer)
+			answerChan <- answer
+		}()
+		select {
+		case <-timer.C:
+			fmt.Printf("\nYou scored %d out of %d.\n", correct, len(questions))
+			return
+		case answer := <-answerChan:
+			if answer == v.ans {
+				correct += 1
+			}
 		}
 	}
 	fmt.Printf("You scored %d out of %d.\n", correct, len(questions))
