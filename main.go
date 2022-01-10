@@ -4,6 +4,7 @@ import (
 	"encoding/csv"
 	"flag"
 	"fmt"
+	"math/rand"
 	"os"
 	"time"
 )
@@ -18,6 +19,15 @@ func parseContent(lines [][]string) []problem {
 	for i, line := range lines {
 		val[i] = problem{ques: line[0], ans: line[1]}
 	}
+
+	return val
+}
+
+func shuffleQuiz(val []problem) []problem {
+	rand.Seed(time.Now().UnixNano())
+	rand.Shuffle(len(val), func(x, y int) {
+		val[x], val[y] = val[y], val[x]
+	})
 	return val
 }
 
@@ -28,13 +38,15 @@ func exit(exitMessage string) {
 
 func main() {
 
-	//fmt.Println("Hello, quiz :)")
+	//Create all flags needed for the quiz game
 	csvFilename := flag.String("csv", "problems.csv", "a CSV file with text written in a 'Question, Answer' format")
 	timeLimit := flag.Int("limit", 30, "Time allocated for the quiz (in seconds)")
+	shuffle := flag.Bool("shuffle", true, "Shuffles the order of the questions displayed from the quiz file")
 	flag.Parse()
 
+	// Open the provided CSV file
 	file, err := os.Open(*csvFilename)
-	if err != nil {
+	if err != nil { //if there is an error when opening CSV file (e.g. CSV file does not exist)
 		msg := fmt.Sprintf("Failed to open the CSV file: %v\n", *csvFilename)
 		exit(msg)
 	}
@@ -45,6 +57,10 @@ func main() {
 		exit("Failed to parse the provided CSV file")
 	}
 	questions := parseContent(content)
+
+	if *shuffle { // if shuffle flag has boolean value of "true"
+		shuffleQuiz(questions)
+	}
 
 	timer := time.NewTimer(time.Duration(*timeLimit) * time.Second)
 
