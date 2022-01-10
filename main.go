@@ -5,7 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
-	//"time"
+	"time"
 )
 
 type problem struct {
@@ -30,6 +30,7 @@ func main() {
 
 	//fmt.Println("Hello, quiz :)")
 	csvFilename := flag.String("csv", "problems.csv", "a CSV file with text written in a 'Question, Answer' format")
+	timeLimit := flag.Int("limit", 30, "Time allocated for the quiz (in seconds)")
 	flag.Parse()
 
 	file, err := os.Open(*csvFilename)
@@ -44,6 +45,8 @@ func main() {
 		exit("Failed to parse the provided CSV file")
 	}
 	questions := parseContent(content)
+
+	timer := time.NewTimer(time.Duration(*timeLimit) * time.Second)
 
 	correct := 0
 	for i, v := range questions {
