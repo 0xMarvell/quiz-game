@@ -1,5 +1,5 @@
 # QUIZ GAME
- A simple program that reads in a quiz provided via a CSV file and then outputs the quiz to a user keeping track of how many questions they get right and how many they get incorrect. it includes an option to shuffle the questions provided in the quiz via a flag.
+ A simple command line program that reads in a quiz provided via a CSV file and then outputs the quiz to a user keeping track of how many questions they get right and how many they get incorrect. it includes an option to shuffle the questions provided in the quiz via a flag.
 
  ## How to run program
  - Clone Repo ( <code>git clone https://github.com/Marvellous-Chimaraoke/quiz-game.git</code> ) or download code as zip file 
