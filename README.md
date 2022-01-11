@@ -7,4 +7,4 @@
  - Open the code base directory in terminal
  - For MacOS and Linux - Run <code>go build . && ./"quiz game"</code>
  - For Windows Powershell - Run <code>go build .; ./"quiz game"</code>
- - For more information on the usage of the quiz game - Run <code>./"quiz game"</code> 
+ - For more information on the usage of the quiz game - Run <code>./"quiz game" -h</code> or <code>./"quiz game" --help</code>
