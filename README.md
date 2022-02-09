@@ -10,3 +10,16 @@
  - For MacOS and Linux - Run <code>go build . && ./"quiz game"</code>
  - For Windows Powershell - Run <code>go build .; ./"quiz game"</code>
  - For more information on the usage of the quiz game - Run <code>./"quiz game" -h</code> or <code>./"quiz game" --help</code>
+```
+
+{
+
+  "firstName": "John",
+
+  "lastName": "Smith",
+
+  "age": 25
+
+}
+
+```
