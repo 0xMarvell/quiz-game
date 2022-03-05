@@ -3,10 +3,21 @@
 
  ## How to run program
  - Clone Repo 
-```git clone https://github.com/Marvellous-Chimaraoke/quiz-game.git```
- or download code as zip file 
+```bash
+git clone https://github.com/Marvellous-Chimaraoke/quiz-game.git
+```
  - Make sure to have at least Go version 1.17.6 installed on your device
  - Open the code base directory in terminal
- - For MacOS and Linux - Run <code>go build . && ./"quiz game"</code>
- - For Windows Powershell - Run <code>go build .; ./"quiz game"</code>
- - For more information on the usage of the quiz game - Run ```./"quiz game"``` or ```./"quiz game" --help```
+ - Run program:
+    - MacOS/Linux 
+    ```go
+    go build . && ./quiz
+    ```
+    - Windows Powershell
+    ```go
+    go build .; ./quiz
+    ```
+- For more information on the usage of the quiz game:
+    ```go
+    ./quiz-game --help
+    ```
