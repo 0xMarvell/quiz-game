@@ -7,7 +7,7 @@
 - Clone Repo
 
     ```bash
-    git clone https://github.com/Marvellous-Chimaraoke/quiz-game.git
+    git clone https://github.com/0xMarvell/quiz-game.git
     ```
 
 - Make sure to have at least Go version 1.17.6 installed on your device

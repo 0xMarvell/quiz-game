@@ -1,3 +1,3 @@
-module github.com/Marvellous-Chimaraoke/quiz-game
+module github.com/0xMarvell/quiz-game
 
 go 1.17
